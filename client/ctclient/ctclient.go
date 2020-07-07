@@ -339,7 +339,6 @@ func showRawLogEntry(rle *ct.RawLogEntry) {
 	}
 	if *chainOut {
 		for _, c := range rle.Chain {
-			fmt.Println("\n\nIn for loop\n\n")
 			showRawCert(c)
 		}
 	}
@@ -592,10 +591,8 @@ func showRawCert(cert ct.ASN1Cert) {
 		if c == nil {
 			return
 		}
-		fmt.Println("\n\nSHOWING PARSED CERT\n\n")
 		showParsedCert(c)
 	} else {
-		fmt.Println("\n\nSHOWING PEM DATA\n\n")
 		showPEMData(cert.Data)
 	}
 }
@@ -609,11 +606,10 @@ func showRawCertJson(cert ct.ASN1Cert, rle *ct.RawLogEntry) {
 		if c == nil {
 			return
 		}
-		fmt.Println("\n\nSHOWING PARSED CERT\n\n")
+
 		showParsedCert(c)
 		showParsedCertJson(c, rle)
 	} else {
-		fmt.Println("\n\nSHOWING PEM DATA\n\n")
 		showPEMData(cert.Data)
 	}
 }
