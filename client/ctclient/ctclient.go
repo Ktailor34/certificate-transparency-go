@@ -1,4 +1,4 @@
-// Copyright 2016 Google LLC. All Rights Reserved.
+// Copyright 2016 Google Inc. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import (
 	"crypto/tls"
 	"encoding/base64"
 	"encoding/hex"
+	"encoding/json"
 	"encoding/pem"
 	"flag"
 	"fmt"
@@ -43,6 +44,7 @@ import (
 	"github.com/google/certificate-transparency-go/x509util"
 	"github.com/google/trillian/merkle"
 	"github.com/google/trillian/merkle/rfc6962"
+	//"golang.org/x/tools/go/analysis/passes/nilfunc"
 )
 
 var (
@@ -67,6 +69,97 @@ var (
 	prevHash        = flag.String("prev_hash", "", "Previous tree hash to check against (as hex string or base64)")
 	leafHash        = flag.String("leaf_hash", "", "Leaf hash to retrieve (as hex string or base64)")
 )
+
+type LogEntry struct {
+	Index            int64
+	Timestamp        uint64
+	DecodedTimestamp time.Time
+	X509Cert         Certificate
+	Chain            []ASN1Cert
+}
+
+type ASN1Cert struct {
+	Data []byte `tls:"minlen:1,maxlen:16777215"`
+}
+
+type Certificate struct {
+	Data            Data
+	Signature_Alg   Signature_Alg
+	Signature_Alg_2 Signature_Alg_2
+}
+
+type Data struct {
+	Version         int
+	Serial_Number10 string
+	Serial_Number16 string
+}
+
+type Signature_Alg struct {
+	SignatureAlg            string
+	Issuer                  string
+	Validity                Validity
+	Subject                 string
+	Subject_Public_Key_Info Subject_Public_Key_Info
+	X509v3_Extensions       X509v3_Extensions
+}
+
+type Validity struct {
+	Not_Before string
+	Not_After  string
+}
+
+type Subject_Public_Key_Info struct {
+	Public_Key_Algorithm Public_Key_Algorithm
+}
+
+type Public_Key_AlgorithmDSA struct {
+	Pub string
+	P   string
+	Q   string
+	G   string
+}
+
+type Public_Key_AlgorithmECDSA struct {
+	Public_Key string
+	Pub        string
+	ASN1_OID   string
+}
+
+type Public_Key_Algorithm struct {
+	PublicKeyAlg string
+	Public_Key   int
+	Modulus      string
+	Exponent     int
+}
+
+type X509v3_Extensions struct {
+	X509v3_Authority_Key_Identifier      string
+	X509v3_Subject_Key_Identifier        string
+	X509v3_Key_Usage_Critical            string //this ones weird
+	X509v3_Extended_Key_Usage            string
+	X509v3_Basic_Constraints_Critical    string //also wierd
+	X509v3_Subject_Alternative_Name      string
+	X509v3_Certificate_Policies          string
+	Authority_Information_Access         Authority_Information_Access
+	RFC6962_Certificate_Transparency_SCT []SCT
+}
+
+type Authority_Information_Access struct {
+	CA_Issuers string
+	OCSP       string
+}
+
+type SCT struct {
+	Version            string
+	LogID              string
+	Timestamp          uint64
+	SignatureAlgorithm string
+	Signature          []byte
+}
+
+type Signature_Alg_2 struct {
+	SHA256_RSA string
+}
 
 func signatureToString(signed *ct.DigitallySigned) string {
 	return fmt.Sprintf("Signature: Hash=%v Sign=%v Value=%x", signed.Algorithm.Hash, signed.Algorithm.Signature, signed.Signature)
@@ -207,6 +300,14 @@ func getEntries(ctx context.Context, logClient *client.LogClient) {
 		exitWithDetails(err)
 	}
 
+	_, err = os.Stat("certLog.txt")
+	if !os.IsExist(err) {
+		fileRemove := os.Remove("certLog.txt")
+		if fileRemove != nil {
+			exitWithDetails(err)
+		}
+	}
+
 	for i, rawEntry := range rsp.Entries {
 		index := *getFirst + int64(i)
 		rle, err := ct.RawLogEntryFromLeaf(index, &rawEntry)
@@ -225,9 +326,12 @@ func showRawLogEntry(rle *ct.RawLogEntry) {
 
 	switch ts.EntryType {
 	case ct.X509LogEntryType:
+		fmt.Println("IS IT THIS ONE")
 		fmt.Printf("X.509 certificate:\n")
 		showRawCert(*ts.X509Entry)
+		showRawCertJson(*ts.X509Entry, rle)
 	case ct.PrecertLogEntryType:
+		fmt.Println("OR THIS ONE")
 		fmt.Printf("pre-certificate from issuer with keyhash %x:\n", ts.PrecertEntry.IssuerKeyHash)
 		showRawCert(rle.Cert) // As-submitted: with signature and poison.
 	default:
@@ -235,9 +339,81 @@ func showRawLogEntry(rle *ct.RawLogEntry) {
 	}
 	if *chainOut {
 		for _, c := range rle.Chain {
+			fmt.Println("\n\nIn for loop\n\n")
 			showRawCert(c)
 		}
 	}
+
+}
+
+func createJsonCert(cert *x509.Certificate) Certificate {
+
+	myData := Data{
+		Version:         cert.Version,
+		Serial_Number10: cert.SerialNumber.Text(10),
+		Serial_Number16: cert.SerialNumber.Text(16),
+	}
+
+	myValidity := Validity{
+		Not_Before: cert.NotBefore.String(),
+		Not_After:  cert.NotAfter.String(),
+	}
+
+	publicKey, bytes, exponent := publicKeyToString(cert.PublicKeyAlgorithm, cert.PublicKey)
+	myPublicKeyAlgorithm := Public_Key_Algorithm{ //ONLY FOR RSA ENCRYPTION
+		PublicKeyAlg: publicKeyAlgorithmToString(cert.PublicKeyAlgorithm),
+		Public_Key:   publicKey,
+		Modulus:      hex.EncodeToString(bytes),
+		Exponent:     exponent,
+	}
+
+	mySubjectPublicKeyInfo := Subject_Public_Key_Info{
+		Public_Key_Algorithm: myPublicKeyAlgorithm,
+	}
+
+	var CA string
+	var OCSP string
+	CA, OCSP = showAuthInfoAccess(cert)
+	myAuthorityInformationAccess := Authority_Information_Access{
+		CA_Issuers: CA,
+		OCSP:       OCSP,
+	}
+
+	myX509v3Extensions := X509v3_Extensions{
+		X509v3_Authority_Key_Identifier:      showAuthKeyID(cert),
+		X509v3_Subject_Key_Identifier:        showSubjectKeyID(cert),
+		X509v3_Key_Usage_Critical:            showKeyUsage(cert),
+		X509v3_Extended_Key_Usage:            showExtendedKeyUsage(cert),
+		X509v3_Basic_Constraints_Critical:    showBasicConstraints(cert),
+		X509v3_Subject_Alternative_Name:      showSubjectAltName(cert), //Might want to split up
+		X509v3_Certificate_Policies:          showCertPolicies(cert),
+		Authority_Information_Access:         myAuthorityInformationAccess,
+		RFC6962_Certificate_Transparency_SCT: showCTSCT(cert),
+	}
+
+	mySignatureAlg := Signature_Alg{
+		SignatureAlg:            cert.SignatureAlgorithm.String(),
+		Issuer:                  x509util.NameToString(cert.Issuer),
+		Validity:                myValidity,
+		Subject:                 x509util.NameToString(cert.Subject),
+		Subject_Public_Key_Info: mySubjectPublicKeyInfo,
+		X509v3_Extensions:       myX509v3Extensions,
+	}
+
+	signature := showSignature(cert)
+	mySignatureAlg_2 := Signature_Alg_2{
+		SHA256_RSA: hex.EncodeToString(signature),
+	}
+
+	myCert := Certificate{
+		Data:            myData,
+		Signature_Alg:   mySignatureAlg,
+		Signature_Alg_2: mySignatureAlg_2,
+	}
+
+	//fmt.Println(myCert)
+
+	return myCert
 }
 
 func findTimestamp(ctx context.Context, logClient *client.LogClient) {
@@ -416,13 +592,91 @@ func showRawCert(cert ct.ASN1Cert) {
 		if c == nil {
 			return
 		}
+		fmt.Println("\n\nSHOWING PARSED CERT\n\n")
 		showParsedCert(c)
 	} else {
+		fmt.Println("\n\nSHOWING PEM DATA\n\n")
 		showPEMData(cert.Data)
 	}
 }
 
+func showRawCertJson(cert ct.ASN1Cert, rle *ct.RawLogEntry) {
+	if *textOut {
+		c, err := x509.ParseCertificate(cert.Data)
+		if err != nil {
+			glog.Errorf("Error parsing certificate: %q", err.Error())
+		}
+		if c == nil {
+			return
+		}
+		fmt.Println("\n\nSHOWING PARSED CERT\n\n")
+		showParsedCert(c)
+		showParsedCertJson(c, rle)
+	} else {
+		fmt.Println("\n\nSHOWING PEM DATA\n\n")
+		showPEMData(cert.Data)
+	}
+}
+
+func writeJsonLogEntry(cert *x509.Certificate, rle *ct.RawLogEntry) {
+
+	ts := rle.Leaf.TimestampedEntry
+	when := ct.TimestampToTime(ts.Timestamp)
+	//fmt.Printf("Index=%d Timestamp=%d (%v) ", rle.Index, ts.Timestamp, when)
+
+	myCert := createJsonCert(cert)
+
+	myLogEntry := LogEntry{
+		Index:            rle.Index,
+		Timestamp:        ts.Timestamp,
+		DecodedTimestamp: when,
+		X509Cert:         myCert,
+		Chain:            nil,
+	}
+
+	bs, err := json.MarshalIndent(&myLogEntry, "", "    ")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// check if file exists
+	var _, checkFile = os.Stat("certLog.txt")
+
+	// create file if not exists
+	if os.IsNotExist(checkFile) {
+		var file, checkFile = os.Create("certLog.txt")
+		if checkFile != nil {
+			panic(err)
+		}
+		defer file.Close()
+	}
+	f, err := os.OpenFile("certLog.txt", os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		panic(err)
+	}
+
+	defer f.Close()
+
+	if _, err = f.Write(bs); err != nil {
+		panic(err)
+	}
+
+}
+
 func showParsedCert(cert *x509.Certificate) {
+
+	if *textOut {
+		fmt.Printf("%s\n", x509util.CertificateToString(cert))
+	} else {
+		showPEMData(cert.Raw)
+	}
+}
+
+func showParsedCertJson(cert *x509.Certificate, rle *ct.RawLogEntry) {
+
+	writeJsonLogEntry(cert, rle)
+
 	if *textOut {
 		fmt.Printf("%s\n", x509util.CertificateToString(cert))
 	} else {

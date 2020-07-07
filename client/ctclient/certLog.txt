@@ -1,0 +1,93 @@
+{
+    "Index": 1000,
+    "Timestamp": 1410269331460,
+    "DecodedTimestamp": "2014-09-09T09:28:51.46-04:00",
+    "X509Cert": {
+        "Data": {
+            "Version": 3,
+            "Serial_Number10": "1277250447",
+            "Serial_Number16": "4c214b8f"
+        },
+        "Signature_Alg": {
+            "SignatureAlg": "SHA1-RSA",
+            "Issuer": "C=US, O=Entrust, Inc., OU=www.entrust.net/rpa is incorporated by reference, OU=(c) 2009 Entrust, Inc., CN=Entrust Certification Authority - L1C",
+            "Validity": {
+                "Not_Before": "2013-11-12 09:31:25 +0000 UTC",
+                "Not_After": "2014-11-11 12:54:05 +0000 UTC"
+            },
+            "Subject": "C=ZA, O=Metropolitan Health Corporate, L=Cape Town, CN=www.sabmas.mobi",
+            "Subject_Public_Key_Info": {
+                "Public_Key_Algorithm": {
+                    "PublicKeyAlg": "rsaEncryption",
+                    "Public_Key": 2048,
+                    "Modulus": "bce1d266fbcbf5bb98ce93f4bd9dfbf80f77ec347a27fe75e0a29630122fd53d605e5f8a26c20e2fe15294b6abea0a858b135a3092d538baa47855662f41c3d483fc99a07c5a962d0faae9d24842dd74cfbf18e4db632cafd63bc54b56e6d163a566e7507a15cd48075d9f4f6f96ff89bacb68892e8db04ec321b89d865b6f29646582b1f5b9ee90bc4c025f5f19098f630415393290bec684149ca168492657bb828f81b3a675bf674de6c2bfb320f7ad299b9b3a794e534c21fa7ba3f98b25d3d3568fb96eb3a9e790a4ff27ccdb00b32f51295879017ccacb6f9f526f8dcc82e39ce793b6db7286f72b4c5fd2f635aa9085b16ef9324f99d24c3a4fec941f",
+                    "Exponent": 65537
+                }
+            },
+            "X509v3_Extensions": {
+                "X509v3_Authority_Key_Identifier": "1ef1ab8906f8490f013377ee147aee197c93284d",
+                "X509v3_Subject_Key_Identifier": "56e4ec5f7657e95e2943ebc7c5371db190c6c1b1",
+                "X509v3_Key_Usage_Critical": "Digital Signature, Key Encipherment",
+                "X509v3_Extended_Key_Usage": "TLS Web server authentication",
+                "X509v3_Basic_Constraints_Critical": "",
+                "X509v3_Subject_Alternative_Name": "DNS:www.sabmas.mobi",
+                "X509v3_Certificate_Policies": "1.2.840.113533.7.75.2 2.23.140.1.2.2 ",
+                "Authority_Information_Access": {
+                    "CA_Issuers": "URI:http://aia.entrust.net/2048-l1c.cer",
+                    "OCSP": "URI:http://ocsp.entrust.net"
+                },
+                "RFC6962_Certificate_Transparency_SCT": null
+            }
+        },
+        "Signature_Alg_2": {
+            "SHA256_RSA": "59d07b53f9df8b28c0997f07d92f301709698cd86d1cf54ec98518935916fdd86f25571b50e4165a81afe9c6313e160f1f26c7bedf54bb89ad3b287703a261c239990d62f659c62845414eba4f93174a422e305917dd5f11d4487852c9dcb760644f29eab1e00d8ad10237c5d1bbe948ca9f67b3eead473edcb7d49b72245f70498dfc09ce3bc4bab299ce2529d8f90b0113b63e84416de2422ad12b4e39402faabcd3ddced08fd2921046eb68f0d0c6ee07830f28c389a38e600fb3582cdd9b8e43406d4d2d44b98ee44a8a0b340f6b3994aa3c2f361216abf791fbf16edf51c346cd7a5cfb6fe0ea309413518c9957f22beceec57494015bc65e1e7430fd67"
+        }
+    },
+    "Chain": null
+}{
+    "Index": 1001,
+    "Timestamp": 1410269321267,
+    "DecodedTimestamp": "2014-09-09T09:28:41.267-04:00",
+    "X509Cert": {
+        "Data": {
+            "Version": 3,
+            "Serial_Number10": "12197790790950228",
+            "Serial_Number16": "2b55d37b239d54"
+        },
+        "Signature_Alg": {
+            "SignatureAlg": "SHA1-RSA",
+            "Issuer": "C=US, O=GoDaddy.com, Inc., OU=http://certificates.godaddy.com/repository, L=Scottsdale, ST=Arizona, serialNumber=07969287, CN=Go Daddy Secure Certification Authority",
+            "Validity": {
+                "Not_Before": "2013-01-04 21:09:00 +0000 UTC",
+                "Not_After": "2015-07-12 13:49:59 +0000 UTC"
+            },
+            "Subject": "O=*.lambtoncollege.ca, OU=Domain Control Validated, CN=*.lambtoncollege.ca",
+            "Subject_Public_Key_Info": {
+                "Public_Key_Algorithm": {
+                    "PublicKeyAlg": "rsaEncryption",
+                    "Public_Key": 2048,
+                    "Modulus": "947c6c8264ddfd8649587bce5fed842df14f09334b837ef10f24bdb3554c4879369a0cffb1f352514c89a0db6b0a46fbfb1c378536b14f41106811ab705f238eebdb3e55894e02e22bf05ca037241da1615db6bad0fc88edc7c25321cc0a5a4e540308ee3e2c570e0146bb3149e9ed0a4f9b8e16705bfb75143e373ed8cdd6802f12f61d841213fd385ac4fba56cd256f98c77d2d303364af5e1ad65eba2de0b89ab472dcadeeb8affb8cd4292e9532bc2093e57da863fac52474a4d3de2c0a7bb81d51fb0b16ed6b77a57bb2df517867648d38dea5d44ff3b440abe50db4b12a7bac0c6654f07e9376963aeddd55a8142d24b1dd94b923d518a7eea1e688c79",
+                    "Exponent": 65537
+                }
+            },
+            "X509v3_Extensions": {
+                "X509v3_Authority_Key_Identifier": "fdac6132936c45d6e2ee855f9abae7769968cce7",
+                "X509v3_Subject_Key_Identifier": "ef3e6a57981a60d578d08ae9c4f5590200b22acc",
+                "X509v3_Key_Usage_Critical": "critical Digital Signature, Key Encipherment",
+                "X509v3_Extended_Key_Usage": "TLS Web server authentication, TLS Web client authentication",
+                "X509v3_Basic_Constraints_Critical": "",
+                "X509v3_Subject_Alternative_Name": "DNS:*.lambtoncollege.ca, DNS:lambtoncollege.ca",
+                "X509v3_Certificate_Policies": "2.16.840.1.114413.1.7.23.1 ",
+                "Authority_Information_Access": {
+                    "CA_Issuers": "URI:http://certificates.godaddy.com/repository/gd_intermediate.crt",
+                    "OCSP": "URI:http://ocsp.godaddy.com/"
+                },
+                "RFC6962_Certificate_Transparency_SCT": null
+            }
+        },
+        "Signature_Alg_2": {
+            "SHA256_RSA": "14954bf8b8fa0c5f39a60585e465d8b688b0cd351f80ccea47680f850006066b0b3e9093a7db19d07344e34c6fa4973c29f17f8ec04143b9940ca046229a20851f17c446e81cf8569cbb8c4696430edbe8528f3ba9d7d6649a90c08380feacaafc6c7ce97928d653336a1f131900ef9d3f871c67e5bbced53309664936504c5e768edd601bb444559b65aad54094e1a8d30175b12eeb5fcdd86a3a5f08080a7d612a3e760c36d903457e3d9823dcc41280d663dff7a92dc489a889534989d4205ff833aa3ea40ced188c8b49f6067f0aeb55b84c1fac8529fbae9ad8633e8ce847b8f6126d23027a3ac60c3176718b2fc65ae797dcd46189fde7c8ae3829ed0e"
+        }
+    },
+    "Chain": null
+}
