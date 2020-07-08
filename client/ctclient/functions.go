@@ -390,7 +390,7 @@ func GeneralNamesToString(gname *x509.GeneralNames) string {
 // The output roughly resembles that from openssl x509 -text.
 func CertificateToString(cert *x509.Certificate) string {
 	var result bytes.Buffer
-	result.WriteString(fmt.Sprintf("Certificate:\n"))
+	/*result.WriteString(fmt.Sprintf("Certificate:\n"))
 	result.WriteString(fmt.Sprintf("    Data:\n"))
 	result.WriteString(fmt.Sprintf("        Version: %d (%#x)\n", cert.Version, cert.Version-1))
 	result.WriteString(fmt.Sprintf("        Serial Number: %s (0x%s)\n", cert.SerialNumber.Text(10), cert.SerialNumber.Text(16)))
@@ -402,10 +402,11 @@ func CertificateToString(cert *x509.Certificate) string {
 	result.WriteString(fmt.Sprintf("        Subject: %v\n", NameToString(cert.Subject)))
 	result.WriteString(fmt.Sprintf("        Subject Public Key Info:\n"))
 	result.WriteString(fmt.Sprintf("            Public Key Algorithm: %v\n", publicKeyAlgorithmToString(cert.PublicKeyAlgorithm)))
+	*/
 	//result.WriteString(fmt.Sprintf("%v\n", publicKeyToString(cert.PublicKeyAlgorithm, cert.PublicKey)))
 
 	if len(cert.Extensions) > 0 {
-		result.WriteString(fmt.Sprintf("        X509v3 extensions:\n"))
+		//	result.WriteString(fmt.Sprintf("        X509v3 extensions:\n"))
 	}
 	// First display the extensions that are already cracked out
 	//showAuthKeyID(&result, cert)
@@ -725,7 +726,13 @@ func showCTSCT(cert *x509.Certificate) []SCT {
 
 	if count > 0 {
 		//result.WriteString(fmt.Sprintf("            RFC6962 Certificate Transparency SCT:"))
-		showCriticalPrint(critical)
+		critical := showCriticalPrint(critical)
+		var criticalBool bool
+		if critical == "critical " {
+			criticalBool = true
+		} else {
+			criticalBool = false
+		}
 		for _, sctData := range cert.SCTList.SCTList {
 			//result.WriteString(fmt.Sprintf("              SCT [%d]:\n", i))
 			var sct ct.SignedCertificateTimestamp
@@ -744,6 +751,7 @@ func showCTSCT(cert *x509.Certificate) []SCT {
 			//result.WriteString("\n")
 
 			mySCT := SCT{
+				IsCritical:         criticalBool,
 				Version:            sct.SCTVersion.String(),
 				LogID:              base64.StdEncoding.EncodeToString(sct.LogID.KeyID[:]),
 				Timestamp:          sct.Timestamp,

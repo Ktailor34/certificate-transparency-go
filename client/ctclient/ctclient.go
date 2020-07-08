@@ -75,7 +75,7 @@ type LogEntry struct {
 	Timestamp        uint64
 	DecodedTimestamp time.Time
 	X509Cert         Certificate
-	Chain            []ASN1Cert
+	Chain            []ct.ASN1Cert
 }
 
 type ASN1Cert struct {
@@ -150,6 +150,7 @@ type Authority_Information_Access struct {
 }
 
 type SCT struct {
+	IsCritical         bool
 	Version            string
 	LogID              string
 	Timestamp          uint64
@@ -334,6 +335,7 @@ func showRawLogEntry(rle *ct.RawLogEntry) {
 		fmt.Println("OR THIS ONE")
 		fmt.Printf("pre-certificate from issuer with keyhash %x:\n", ts.PrecertEntry.IssuerKeyHash)
 		showRawCert(rle.Cert) // As-submitted: with signature and poison.
+		showRawCertJson(rle.Cert, rle)
 	default:
 		fmt.Printf("Unhandled log entry type %d\n", ts.EntryType)
 	}
@@ -627,7 +629,7 @@ func writeJsonLogEntry(cert *x509.Certificate, rle *ct.RawLogEntry) {
 		Timestamp:        ts.Timestamp,
 		DecodedTimestamp: when,
 		X509Cert:         myCert,
-		Chain:            nil,
+		Chain:            rle.Chain,
 	}
 
 	bs, err := json.MarshalIndent(&myLogEntry, "", "    ")
