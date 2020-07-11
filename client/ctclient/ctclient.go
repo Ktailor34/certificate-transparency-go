@@ -34,6 +34,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-co-op/gocron"
+
 	"github.com/golang/glog"
 	ct "github.com/google/certificate-transparency-go"
 	"github.com/google/certificate-transparency-go/client"
@@ -344,7 +346,6 @@ func showRawLogEntry(rle *ct.RawLogEntry) {
 			showRawCert(c)
 		}
 	}
-
 }
 
 func createJsonCert(cert *x509.Certificate) Certificate {
@@ -702,6 +703,31 @@ func dieWithUsage(msg string) {
 	os.Exit(1)
 }
 
+func updateIndex(firstIndex int64) {
+	f, err := os.Open("newEntriesIndex.txt")
+	if err != nil {
+		fmt.Printf("error opening file: %v", err)
+		return
+	}
+	defer f.Close()
+	_, err = f.WriteString(fmt.Sprintf("%d \n", firstIndex)) // writing...
+	if err != nil {
+		fmt.Printf("error writing indexes: %v", err)
+	}
+}
+
+func startSchedule(ctx context.Context, logClient *client.LogClient, firstIndex int64, lastIndex int64) {
+	//fix your first and last flags
+	*getFirst = firstIndex
+	*getLast = lastIndex
+
+	// defines a new scheduler that schedules and runs jobs
+	s1 := gocron.NewScheduler(time.UTC)
+
+	s1.Every(10).Minutes().Do(getEntries, ctx, logClient)
+
+}
+
 func main() {
 	flag.Parse()
 	ctx := context.Background()
@@ -774,6 +800,7 @@ func main() {
 	var err error
 	var logClient *client.LogClient
 	var checkClient client.CheckLogClient
+
 	if dns != "" {
 		if *dnsServer != "" {
 			glog.V(1).Infof("Use DNS server at %s for basename %s", *dnsServer, dns)
@@ -823,6 +850,24 @@ func main() {
 			glog.Exit("Cannot bisect over DNS")
 		}
 		findTimestamp(ctx, logClient)
+	case "getNewEntries":
+		if logClient == nil {
+			glog.Exit("Cannot get-entries over DNS")
+		}
+
+		data, err := ioutil.ReadFile("newEntriesIndex.txt")
+		if err != nil {
+			fmt.Println(err)
+		}
+		var first int64 = -1
+		var last int64 = 9999999999
+
+		splitStrings := strings.Split(string(data), " ")
+		first, err = strconv.ParseInt(splitStrings[0], 10, 64)
+
+		//Get all new entries
+		startSchedule(ctx, logClient, first, last)
+
 	default:
 		dieWithUsage(fmt.Sprintf("Unknown command '%s'", cmd))
 	}
