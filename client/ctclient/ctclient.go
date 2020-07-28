@@ -213,16 +213,22 @@ func getEntries(ctx context.Context, logClient *client.LogClient) {
 		rle, err := ct.RawLogEntryFromLeaf(index, &rawEntry)
 
 		le, _ := rle.ToLogEntry()
+
+		// Switch between these two lines for indented and non indented file
 		bs, err := json.MarshalIndent(&le,"","    ")
 		//bs, err := json.Marshal(&le)
+
+
 		fmt.Println(string(bs))
 		fmt.Println("\n\n")
+
 		if err != nil {
 			fmt.Printf("Index=%d Failed to unmarshal leaf entry: %v", index, err)
 			continue
 		}
 
-		//showRawLogEntry(rle)
+		// Short Circuiting code here, uncomment for orignial 
+		// showRawLogEntry(rle)
 	}
 }
 
@@ -245,7 +251,6 @@ func showRawLogEntry(rle *ct.RawLogEntry) {
 	}
 	if *chainOut {
 		for _, c := range rle.Chain {
-			fmt.Println("\nIN CHAIN OUT\n")
 			showRawCert(c)
 		}
 	}
