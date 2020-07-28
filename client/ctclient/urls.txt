@@ -1,0 +1,41 @@
+"https://ct.googleapis.com/logs/argon2020/" 31
+"https://ct.googleapis.com/logs/argon2021/" 31
+"https://ct.googleapis.com/logs/argon2022/" 31
+"https://ct.googleapis.com/logs/argon2023/" 31
+"https://ct.googleapis.com/logs/xenon2020/" 31
+"https://ct.googleapis.com/logs/xenon2021/" 31
+"https://ct.googleapis.com/logs/xenon2022/" 31
+"https://ct.googleapis.com/logs/xenon2023/" 31
+"https://ct.googleapis.com/aviator/" 31 
+"https://ct.googleapis.com/icarus/" 31
+"https://ct.googleapis.com/pilot/" 31
+"https://ct.googleapis.com/rocketeer/" 31
+"https://ct.googleapis.com/skydiver/" 31 
+"https://ct.cloudflare.com/logs/nimbus2020/" 1025
+"https://ct.cloudflare.com/logs/nimbus2021/" 1025
+"https://ct.cloudflare.com/logs/nimbus2022/" 1025
+"https://ct.cloudflare.com/logs/nimbus2023/" 1025
+"https://ct1.digicert-ct.com/log/" 65
+"https://ct2.digicert-ct.com/log/" not found
+"https://yeti2020.ct.digicert.com/log/" 256
+"https://yeti2021.ct.digicert.com/log/" 256
+"https://yeti2022.ct.digicert.com/log/" 256
+"https://yeti2023.ct.digicert.com/log/" 256
+"https://nessie2020.ct.digicert.com/log/" 256
+"https://nessie2021.ct.digicert.com/log/" 256
+"https://nessie2022.ct.digicert.com/log/" 256
+"https://nessie2023.ct.digicert.com/log/" 256
+"https://ct.ws.symantec.com/" not found
+"https://vega.ws.symantec.com/" idk
+"https://sirius.ws.symantec.com/" idk
+"https://log.certly.io/" idk
+"https://ct.izenpe.com/" didnt work
+"https://ctlog.wosign.com/" didnt work
+"https://ctlog.api.venafi.com/" didnt work
+"https://ctserver.cnnic.cn/" didnt work
+"https://ct.startssl.com/" didnt work
+"https://sabre.ct.comodo.com/" 1000
+"https://mammoth.ct.comodo.com/" 1000
+"https://oak.ct.letsencrypt.org/2020/" 255
+"https://oak.ct.letsencrypt.org/2021/" 255
+"https://oak.ct.letsencrypt.org/2022/" 255

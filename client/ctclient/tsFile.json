@@ -1,0 +1,485 @@
+{
+    "Index": 144445,
+    "Leaf": {
+        "Version": 0,
+        "LeafType": 0,
+        "TimestampedEntry": {
+            "Timestamp": 1523805814016,
+            "EntryType": 1,
+            "X509Entry": null,
+            "PrecertEntry": {
+                "IssuerKeyHash": [
+                    195,
+                    150,
+                    74,
+                    76,
+                    8,
+                    245,
+                    233,
+                    194,
+                    155,
+                    21,
+                    191,
+                    193,
+                    200,
+                    255,
+                    224,
+                    65,
+                    239,
+                    66,
+                    66,
+                    234,
+                    69,
+                    97,
+                    213,
+                    250,
+                    29,
+                    89,
+                    145,
+                    145,
+                    150,
+                    109,
+                    155,
+                    220
+                ],
+                "TBSCertificate": "MIIEyqADAgECAhANZLb2m+RQLzs1aoE0n/M6MA0GCSqGSIb3DQEBCwUAMIGRMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExDzANBgNVBAcTBklydmluZTElMCMGA1UEChMcV2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llczE9MDsGA1UEAxM0V2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llcyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw0xODA0MTUwMDAwMDBaFw0yMDA0MTQyMzU5NTlaMIGqMSEwHwYDVQQLExhEb21haW4gQ29udHJvbCBWYWxpZGF0ZWQxLjAsBgNVBAsTJUhvc3RlZCBieSBXZXN0ZXJuIERpZ2l0YWwgQ29ycG9yYXRpb24xKjAoBgNVBAsTIUNPTU9ETyBTU0wgVW5pZmllZCBDb21tdW5pY2F0aW9uczEpMCcGA1UEAxMgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDAJFcQuC1PuWT321uE1SxE93WuzUBSPAyj3KdGoM4KKEeqbpIinCzZKWFAzVwjDOox4E/C03ofacDZG3UUeTk3RyJ/kcrX2JNztqRRWK9nyFIAuSrfycN9O5sjcjI88xkBO2FF6yXscNwouv8Gr9l4hErGyj5U8Ajna65tOF11ZbGEk7kBabEvnoWF10vARen465+2VDFl1VF0V8oj5U5U4pVIC9wmstymOJ+YzdNVAW9bckcA9fKWjyvtB4osS0tZ2X+X9V3QPfgfVxzroV04yRRzCpbjoHtSE4S0pvtmo1LI0N515Ee8/0PVCT4vvNPFgpOYSQ9YmowSOz8pP3a7AgMBAAGjggIZMIICFTAfBgNVHSMEGDAWgBRZEBqd99g3NP2t1QusaK4C96C9gzAdBgNVHQ4EFgQUQqAYQUTmCuJscQQSa59ItfJFBTgwDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCME8GA1UdIARIMEYwOgYLKwYBBAGyMQECAjMwKzApBggrBgEFBQcCARYdaHR0cHM6Ly9zZWN1cmUuY29tb2RvLmNvbS9DUFMwCAYGZ4EMAQIBMF0GA1UdHwRWMFQwUqBQoE6GTGh0dHA6Ly9jcmwuY29tb2RvY2EuY29tL1dlc3Rlcm5EaWdpdGFsVGVjaG5vbG9naWVzQ2VydGlmaWNhdGlvbkF1dGhvcml0eS5jcmwwgZAGCCsGAQUFBwEBBIGDMIGAMFgGCCsGAQUFBzAChkxodHRwOi8vY3J0LmNvbW9kb2NhLmNvbS9XZXN0ZXJuRGlnaXRhbFRlY2hub2xvZ2llc0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wUwYDVR0RBEwwSoIgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb22CJmRldmljZTU3OTU3OTctYWE2NDJlNmQtbG9jYWwud2QyZ28uY29t"
+            },
+            "JSONEntry": null,
+            "Extensions": ""
+        }
+    },
+    "X509Cert": null,
+    "Precert": {
+        "Submitted": {
+            "Data": "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"
+        },
+        "IssuerKeyHash": [
+            195,
+            150,
+            74,
+            76,
+            8,
+            245,
+            233,
+            194,
+            155,
+            21,
+            191,
+            193,
+            200,
+            255,
+            224,
+            65,
+            239,
+            66,
+            66,
+            234,
+            69,
+            97,
+            213,
+            250,
+            29,
+            89,
+            145,
+            145,
+            150,
+            109,
+            155,
+            220
+        ],
+        "TBSCertificate": {
+            "Raw": "MIIEyqADAgECAhANZLb2m+RQLzs1aoE0n/M6MA0GCSqGSIb3DQEBCwUAMIGRMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExDzANBgNVBAcTBklydmluZTElMCMGA1UEChMcV2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llczE9MDsGA1UEAxM0V2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llcyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw0xODA0MTUwMDAwMDBaFw0yMDA0MTQyMzU5NTlaMIGqMSEwHwYDVQQLExhEb21haW4gQ29udHJvbCBWYWxpZGF0ZWQxLjAsBgNVBAsTJUhvc3RlZCBieSBXZXN0ZXJuIERpZ2l0YWwgQ29ycG9yYXRpb24xKjAoBgNVBAsTIUNPTU9ETyBTU0wgVW5pZmllZCBDb21tdW5pY2F0aW9uczEpMCcGA1UEAxMgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDAJFcQuC1PuWT321uE1SxE93WuzUBSPAyj3KdGoM4KKEeqbpIinCzZKWFAzVwjDOox4E/C03ofacDZG3UUeTk3RyJ/kcrX2JNztqRRWK9nyFIAuSrfycN9O5sjcjI88xkBO2FF6yXscNwouv8Gr9l4hErGyj5U8Ajna65tOF11ZbGEk7kBabEvnoWF10vARen465+2VDFl1VF0V8oj5U5U4pVIC9wmstymOJ+YzdNVAW9bckcA9fKWjyvtB4osS0tZ2X+X9V3QPfgfVxzroV04yRRzCpbjoHtSE4S0pvtmo1LI0N515Ee8/0PVCT4vvNPFgpOYSQ9YmowSOz8pP3a7AgMBAAGjggIZMIICFTAfBgNVHSMEGDAWgBRZEBqd99g3NP2t1QusaK4C96C9gzAdBgNVHQ4EFgQUQqAYQUTmCuJscQQSa59ItfJFBTgwDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCME8GA1UdIARIMEYwOgYLKwYBBAGyMQECAjMwKzApBggrBgEFBQcCARYdaHR0cHM6Ly9zZWN1cmUuY29tb2RvLmNvbS9DUFMwCAYGZ4EMAQIBMF0GA1UdHwRWMFQwUqBQoE6GTGh0dHA6Ly9jcmwuY29tb2RvY2EuY29tL1dlc3Rlcm5EaWdpdGFsVGVjaG5vbG9naWVzQ2VydGlmaWNhdGlvbkF1dGhvcml0eS5jcmwwgZAGCCsGAQUFBwEBBIGDMIGAMFgGCCsGAQUFBzAChkxodHRwOi8vY3J0LmNvbW9kb2NhLmNvbS9XZXN0ZXJuRGlnaXRhbFRlY2hub2xvZ2llc0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wUwYDVR0RBEwwSoIgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb22CJmRldmljZTU3OTU3OTctYWE2NDJlNmQtbG9jYWwud2QyZ28uY29t",
+            "RawTBSCertificate": "MIIEyqADAgECAhANZLb2m+RQLzs1aoE0n/M6MA0GCSqGSIb3DQEBCwUAMIGRMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExDzANBgNVBAcTBklydmluZTElMCMGA1UEChMcV2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llczE9MDsGA1UEAxM0V2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llcyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw0xODA0MTUwMDAwMDBaFw0yMDA0MTQyMzU5NTlaMIGqMSEwHwYDVQQLExhEb21haW4gQ29udHJvbCBWYWxpZGF0ZWQxLjAsBgNVBAsTJUhvc3RlZCBieSBXZXN0ZXJuIERpZ2l0YWwgQ29ycG9yYXRpb24xKjAoBgNVBAsTIUNPTU9ETyBTU0wgVW5pZmllZCBDb21tdW5pY2F0aW9uczEpMCcGA1UEAxMgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDAJFcQuC1PuWT321uE1SxE93WuzUBSPAyj3KdGoM4KKEeqbpIinCzZKWFAzVwjDOox4E/C03ofacDZG3UUeTk3RyJ/kcrX2JNztqRRWK9nyFIAuSrfycN9O5sjcjI88xkBO2FF6yXscNwouv8Gr9l4hErGyj5U8Ajna65tOF11ZbGEk7kBabEvnoWF10vARen465+2VDFl1VF0V8oj5U5U4pVIC9wmstymOJ+YzdNVAW9bckcA9fKWjyvtB4osS0tZ2X+X9V3QPfgfVxzroV04yRRzCpbjoHtSE4S0pvtmo1LI0N515Ee8/0PVCT4vvNPFgpOYSQ9YmowSOz8pP3a7AgMBAAGjggIZMIICFTAfBgNVHSMEGDAWgBRZEBqd99g3NP2t1QusaK4C96C9gzAdBgNVHQ4EFgQUQqAYQUTmCuJscQQSa59ItfJFBTgwDgYDVR0PAQH/BAQDAgWgMAwGA1UdEwEB/wQCMAAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCME8GA1UdIARIMEYwOgYLKwYBBAGyMQECAjMwKzApBggrBgEFBQcCARYdaHR0cHM6Ly9zZWN1cmUuY29tb2RvLmNvbS9DUFMwCAYGZ4EMAQIBMF0GA1UdHwRWMFQwUqBQoE6GTGh0dHA6Ly9jcmwuY29tb2RvY2EuY29tL1dlc3Rlcm5EaWdpdGFsVGVjaG5vbG9naWVzQ2VydGlmaWNhdGlvbkF1dGhvcml0eS5jcmwwgZAGCCsGAQUFBwEBBIGDMIGAMFgGCCsGAQUFBzAChkxodHRwOi8vY3J0LmNvbW9kb2NhLmNvbS9XZXN0ZXJuRGlnaXRhbFRlY2hub2xvZ2llc0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20wUwYDVR0RBEwwSoIgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb22CJmRldmljZTU3OTU3OTctYWE2NDJlNmQtbG9jYWwud2QyZ28uY29t",
+            "RawSubjectPublicKeyInfo": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwCRXELgtT7lk99tbhNUsRPd1rs1AUjwMo9ynRqDOCihHqm6SIpws2SlhQM1cIwzqMeBPwtN6H2nA2Rt1FHk5N0cif5HK19iTc7akUVivZ8hSALkq38nDfTubI3IyPPMZATthResl7HDcKLr/Bq/ZeIRKxso+VPAI52uubThddWWxhJO5AWmxL56FhddLwEXp+OuftlQxZdVRdFfKI+VOVOKVSAvcJrLcpjifmM3TVQFvW3JHAPXylo8r7QeKLEtLWdl/l/Vd0D34H1cc66FdOMkUcwqW46B7UhOEtKb7ZqNSyNDedeRHvP9D1Qk+L7zTxYKTmEkPWJqMEjs/KT92uwIDAQAB",
+            "RawSubject": "MIGqMSEwHwYDVQQLExhEb21haW4gQ29udHJvbCBWYWxpZGF0ZWQxLjAsBgNVBAsTJUhvc3RlZCBieSBXZXN0ZXJuIERpZ2l0YWwgQ29ycG9yYXRpb24xKjAoBgNVBAsTIUNPTU9ETyBTU0wgVW5pZmllZCBDb21tdW5pY2F0aW9uczEpMCcGA1UEAxMgZGV2aWNlNTc5NTc5Ny1hYTY0MmU2ZC53ZDJnby5jb20=",
+            "RawIssuer": "MIGRMQswCQYDVQQGEwJVUzELMAkGA1UECBMCQ0ExDzANBgNVBAcTBklydmluZTElMCMGA1UEChMcV2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llczE9MDsGA1UEAxM0V2VzdGVybiBEaWdpdGFsIFRlY2hub2xvZ2llcyBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eQ==",
+            "Signature": null,
+            "SignatureAlgorithm": 4,
+            "PublicKeyAlgorithm": 1,
+            "PublicKey": {
+                "N": 24255674524121730195842913431703790583681611658362956953088849949939720924181005517255702180810091151780042911233187599107687692295799549302546984976809706314331677036876052945768368631229733764752679692182770741126442879673477010350004548028901991023724829914903126128447875937360897399233037687318445359446423714612468505249663393991456396278089776548173223672748070301783821458145619834096323972864254769313795661624858128701277547373773420767131917205032537514033149073988257361808069425322900568022335984053870312835290911089288267435716088929053516142944458148553146136174774841129718441913504590550363975677627,
+                "E": 65537
+            },
+            "Version": 3,
+            "SerialNumber": 17802904567979422493409403293422056250,
+            "Issuer": {
+                "Country": [
+                    "US"
+                ],
+                "Organization": [
+                    "Western Digital Technologies"
+                ],
+                "OrganizationalUnit": null,
+                "Locality": [
+                    "Irvine"
+                ],
+                "Province": [
+                    "CA"
+                ],
+                "StreetAddress": null,
+                "PostalCode": null,
+                "SerialNumber": "",
+                "CommonName": "Western Digital Technologies Certification Authority",
+                "Names": [
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            6
+                        ],
+                        "Value": "US"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            8
+                        ],
+                        "Value": "CA"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            7
+                        ],
+                        "Value": "Irvine"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            10
+                        ],
+                        "Value": "Western Digital Technologies"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            3
+                        ],
+                        "Value": "Western Digital Technologies Certification Authority"
+                    }
+                ],
+                "ExtraNames": null
+            },
+            "Subject": {
+                "Country": null,
+                "Organization": null,
+                "OrganizationalUnit": [
+                    "Domain Control Validated",
+                    "Hosted by Western Digital Corporation",
+                    "COMODO SSL Unified Communications"
+                ],
+                "Locality": null,
+                "Province": null,
+                "StreetAddress": null,
+                "PostalCode": null,
+                "SerialNumber": "",
+                "CommonName": "device5795797-aa642e6d.wd2go.com",
+                "Names": [
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            11
+                        ],
+                        "Value": "Domain Control Validated"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            11
+                        ],
+                        "Value": "Hosted by Western Digital Corporation"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            11
+                        ],
+                        "Value": "COMODO SSL Unified Communications"
+                    },
+                    {
+                        "Type": [
+                            2,
+                            5,
+                            4,
+                            3
+                        ],
+                        "Value": "device5795797-aa642e6d.wd2go.com"
+                    }
+                ],
+                "ExtraNames": null
+            },
+            "NotBefore": "2018-04-15T00:00:00Z",
+            "NotAfter": "2020-04-14T23:59:59Z",
+            "KeyUsage": 5,
+            "Extensions": [
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        35
+                    ],
+                    "Critical": false,
+                    "Value": "MBaAFFkQGp332Dc0/a3VC6xorgL3oL2D"
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        14
+                    ],
+                    "Critical": false,
+                    "Value": "BBRCoBhBROYK4mxxBBJrn0i18kUFOA=="
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        15
+                    ],
+                    "Critical": true,
+                    "Value": "AwIFoA=="
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        19
+                    ],
+                    "Critical": true,
+                    "Value": "MAA="
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        37
+                    ],
+                    "Critical": false,
+                    "Value": "MBQGCCsGAQUFBwMBBggrBgEFBQcDAg=="
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        32
+                    ],
+                    "Critical": false,
+                    "Value": "MEYwOgYLKwYBBAGyMQECAjMwKzApBggrBgEFBQcCARYdaHR0cHM6Ly9zZWN1cmUuY29tb2RvLmNvbS9DUFMwCAYGZ4EMAQIB"
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        31
+                    ],
+                    "Critical": false,
+                    "Value": "MFQwUqBQoE6GTGh0dHA6Ly9jcmwuY29tb2RvY2EuY29tL1dlc3Rlcm5EaWdpdGFsVGVjaG5vbG9naWVzQ2VydGlmaWNhdGlvbkF1dGhvcml0eS5jcmw="
+                },
+                {
+                    "Id": [
+                        1,
+                        3,
+                        6,
+                        1,
+                        5,
+                        5,
+                        7,
+                        1,
+                        1
+                    ],
+                    "Critical": false,
+                    "Value": "MIGAMFgGCCsGAQUFBzAChkxodHRwOi8vY3J0LmNvbW9kb2NhLmNvbS9XZXN0ZXJuRGlnaXRhbFRlY2hub2xvZ2llc0NlcnRpZmljYXRpb25BdXRob3JpdHkuY3J0MCQGCCsGAQUFBzABhhhodHRwOi8vb2NzcC5jb21vZG9jYS5jb20="
+                },
+                {
+                    "Id": [
+                        2,
+                        5,
+                        29,
+                        17
+                    ],
+                    "Critical": false,
+                    "Value": "MEqCIGRldmljZTU3OTU3OTctYWE2NDJlNmQud2QyZ28uY29tgiZkZXZpY2U1Nzk1Nzk3LWFhNjQyZTZkLWxvY2FsLndkMmdvLmNvbQ=="
+                }
+            ],
+            "ExtraExtensions": null,
+            "UnhandledCriticalExtensions": null,
+            "ExtKeyUsage": [
+                1,
+                2
+            ],
+            "UnknownExtKeyUsage": null,
+            "BasicConstraintsValid": true,
+            "IsCA": false,
+            "MaxPathLen": -1,
+            "MaxPathLenZero": false,
+            "SubjectKeyId": "QqAYQUTmCuJscQQSa59ItfJFBTg=",
+            "AuthorityKeyId": "WRAanffYNzT9rdULrGiuAvegvYM=",
+            "OCSPServer": [
+                "http://ocsp.comodoca.com"
+            ],
+            "IssuingCertificateURL": [
+                "http://crt.comodoca.com/WesternDigitalTechnologiesCertificationAuthority.crt"
+            ],
+            "SubjectTimestamps": null,
+            "SubjectCARepositories": null,
+            "DNSNames": [
+                "device5795797-aa642e6d.wd2go.com",
+                "device5795797-aa642e6d-local.wd2go.com"
+            ],
+            "EmailAddresses": null,
+            "IPAddresses": null,
+            "URIs": null,
+            "PermittedDNSDomainsCritical": false,
+            "PermittedDNSDomains": null,
+            "ExcludedDNSDomains": null,
+            "PermittedIPRanges": null,
+            "ExcludedIPRanges": null,
+            "PermittedEmailAddresses": null,
+            "ExcludedEmailAddresses": null,
+            "PermittedURIDomains": null,
+            "ExcludedURIDomains": null,
+            "CRLDistributionPoints": [
+                "http://crl.comodoca.com/WesternDigitalTechnologiesCertificationAuthority.crl"
+            ],
+            "PolicyIdentifiers": [
+                [
+                    1,
+                    3,
+                    6,
+                    1,
+                    4,
+                    1,
+                    6449,
+                    1,
+                    2,
+                    2,
+                    51
+                ],
+                [
+                    2,
+                    23,
+                    140,
+                    1,
+                    2,
+                    1
+                ]
+            ],
+            "RPKIAddressRanges": null,
+            "RPKIASNumbers": null,
+            "RPKIRoutingDomainIDs": null,
+            "RawSCT": null,
+            "SCTList": {
+                "SCTList": null
+            }
+        }
+    },
+    "JSONData": null,
+    "Chain": [
+        {
+            "Data": "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"
+        },
+        {
+            "Data": "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"
+        }
+    ]
+}
+
+
+
+Index=144445 Timestamp=1523805814016 (2018-04-15 15:23:34.016 +0000 UTC) pre-certificate from issuer with keyhash c3964a4c08f5e9c29b15bfc1c8ffe041ef4242ea4561d5fa1d599191966d9bdc:
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 17802904567979422493409403293422056250 (0xd64b6f69be4502f3b356a81349ff33a)
+    Signature Algorithm: SHA256-RSA
+        Issuer: C=US, O=Western Digital Technologies, L=Irvine, ST=CA, CN=Western Digital Technologies Certification Authority
+        Validity:
+            Not Before: 2018-04-15 00:00:00 +0000 UTC
+            Not After : 2020-04-14 23:59:59 +0000 UTC
+        Subject: OU=Domain Control Validated, OU=Hosted by Western Digital Corporation, OU=COMODO SSL Unified Communications, CN=device5795797-aa642e6d.wd2go.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public Key: (2048 bit)
+                Modulus:
+                    c0:24:57:10:b8:2d:4f:b9:64:f7:db:5b:84:d5:2c:
+                    44:f7:75:ae:cd:40:52:3c:0c:a3:dc:a7:46:a0:ce:
+                    0a:28:47:aa:6e:92:22:9c:2c:d9:29:61:40:cd:5c:
+                    23:0c:ea:31:e0:4f:c2:d3:7a:1f:69:c0:d9:1b:75:
+                    14:79:39:37:47:22:7f:91:ca:d7:d8:93:73:b6:a4:
+                    51:58:af:67:c8:52:00:b9:2a:df:c9:c3:7d:3b:9b:
+                    23:72:32:3c:f3:19:01:3b:61:45:eb:25:ec:70:dc:
+                    28:ba:ff:06:af:d9:78:84:4a:c6:ca:3e:54:f0:08:
+                    e7:6b:ae:6d:38:5d:75:65:b1:84:93:b9:01:69:b1:
+                    2f:9e:85:85:d7:4b:c0:45:e9:f8:eb:9f:b6:54:31:
+                    65:d5:51:74:57:ca:23:e5:4e:54:e2:95:48:0b:dc:
+                    26:b2:dc:a6:38:9f:98:cd:d3:55:01:6f:5b:72:47:
+                    00:f5:f2:96:8f:2b:ed:07:8a:2c:4b:4b:59:d9:7f:
+                    97:f5:5d:d0:3d:f8:1f:57:1c:eb:a1:5d:38:c9:14:
+                    73:0a:96:e3:a0:7b:52:13:84:b4:a6:fb:66:a3:52:
+                    c8:d0:de:75:e4:47:bc:ff:43:d5:09:3e:2f:bc:d3:
+                    c5:82:93:98:49:0f:58:9a:8c:12:3b:3f:29:3f:76:
+                    bb:
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Authority Key Identifier:
+                keyid:59101a9df7d83734fdadd50bac68ae02f7a0bd83
+            X509v3 Subject Key Identifier:
+                keyid:42a0184144e60ae26c7104126b9f48b5f2450538
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage:
+                TLS Web server authentication, TLS Web client authentication
+            X509v3 Basic Constraints: critical
+                CA:false
+            X509v3 Subject Alternative Name:
+                DNS:device5795797-aa642e6d.wd2go.com, DNS:device5795797-aa642e6d-local.wd2go.com
+            X509v3 Certificate Policies:
+                Policy: 1.3.6.1.4.1.6449.1.2.2.51
+                Policy: 2.23.140.1.2.1
+            X509v3 CRL Distribution Points:
+                Full Name:
+                    URI:http://crl.comodoca.com/WesternDigitalTechnologiesCertificationAuthority.crl
+            Authority Information Access:
+                CA Issuers - URI:http://crt.comodoca.com/WesternDigitalTechnologiesCertificationAuthority.crt
+                OCSP - URI:http://ocsp.comodoca.com
+            RFC6962 Pre-Certificate Poison: critical
+                .....
+    Signature Algorithm: SHA256-RSA
+         77:ec:52:39:23:8e:5b:f2:f9:c2:a3:ce:c0:b0:12:7e:67:a3:
+         0b:30:97:93:80:cb:5a:84:0c:10:fc:79:45:3d:77:eb:6f:59:
+         ce:c1:9b:f4:41:cb:6a:5a:6f:5b:28:ea:d7:86:7a:7f:8f:4b:
+         00:ac:30:3a:98:04:1c:3e:d5:87:8d:3f:01:4c:da:e3:6f:73:
+         27:54:d4:cd:6e:39:b5:fc:a8:19:6c:04:8b:2c:d4:59:3c:5a:
+         3a:69:da:0d:59:51:e6:09:2e:35:5e:5d:9f:17:47:00:6f:88:
+         5e:60:4e:a7:33:ab:35:1f:af:2b:e7:73:7e:15:67:f7:4e:47:
+         84:4f:88:6c:ef:a7:8b:61:02:1a:70:a0:0b:9c:3e:26:13:1c:
+         11:2a:40:16:dd:88:c7:6f:24:5a:5b:02:a4:a2:73:53:c2:3a:
+         2e:52:16:42:ca:8d:11:80:94:de:70:32:1b:3e:45:4e:79:49:
+         0a:56:df:74:a5:1e:4e:cb:ce:c1:d1:8d:8a:78:de:68:a9:9a:
+         55:27:7a:a7:df:23:4d:29:b5:b6:b3:ae:10:bd:73:d5:00:e5:
+         a0:5d:03:5b:62:aa:8c:b1:7f:4a:c7:52:70:38:69:49:17:5c:
+         42:f3:ad:76:b1:88:2b:f8:5d:1b:0c:a4:4b:07:7a:61:da:f5:
+         fb:6e:9a:d0:
+

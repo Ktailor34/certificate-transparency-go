@@ -1,0 +1,12 @@
+Iteration Time for 10000: 19.19 running time: 19.19
+Iteration Time for 10000: 15.2 running time: 34.39
+Iteration Time for 10000: 12.05 running time: 46.44
+Iteration Time for 10000: 12.24 running time: 58.68
+Iteration Time for 10000: 13.39 running time: 72.08
+Iteration Time for 10000: 13.67 running time: 85.74
+Iteration Time for 10000: 14.79 running time: 100.53
+Iteration Time for 10000: 13.08 running time: 113.61
+Iteration Time for 10000: 12.85 running time: 126.46
+Iteration Time for 10000: 12.94 running time: 139.4
+total time:  139.4
+Average time for 10000 for 10 iterations: 13.94
